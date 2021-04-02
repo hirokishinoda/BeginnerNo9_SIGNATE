@@ -4,13 +4,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import lightgbm as lgb
 
-train_df = pd.read_csv("../../data/train.csv")
+train_df = pd.read_csv("../feature/dummies_train_df.csv")
 
 Y_train = train_df["target"]
 X_train = train_df.drop("target",axis=1)
-
-print(Y_train.head())
-print(X_train.head())
 
 train_x, val_x, train_y, val_y = train_test_split(X_train, Y_train, test_size=0.2)
 
