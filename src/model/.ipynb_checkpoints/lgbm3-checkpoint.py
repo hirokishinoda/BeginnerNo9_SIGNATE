@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import lightgbm as lgb
 
-train_df = pd.read_csv("../features/")
+train_df = pd.read_pickle("../feature/outliers_train_df.pkl")
 
 Y_train = train_df["target"]
 X_train = train_df.drop("target",axis=1)
@@ -30,7 +30,7 @@ gbm = lgb.train(
     verbose_eval=10
 )
 
-gbm.save_model('lgbm2.txt')
+gbm.save_model('lgbm3.txt')
 
 y_pred = gbm.predict(val_x, num_iteration=gbm.best_iteration)
 
