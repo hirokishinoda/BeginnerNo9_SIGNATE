@@ -12,10 +12,10 @@ model = lgb.LGBMClassifier(silent=False)
 
 param_grid = {
     "n_estimators":[100,200,500],
-    "learning_rate":[0.001,0.01,0.05,0.1],
+    "learning_rate":[0.01,0.05,0.1],
     "num_leaves":[7,15,31],
-    "max_depth":[5,7,9],
-    "min_data_in_leaf":[20,30,50],
+    "max_depth":[2,3,5],
+    "min_data_in_leaf":[50,60,70],
     #"bagging_fraction":[0.8,0.9],
     #"bagging_freq":[1,3],
     #"feature_fraction":[0.9,1.0],
